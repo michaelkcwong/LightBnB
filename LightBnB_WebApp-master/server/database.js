@@ -76,10 +76,29 @@ exports.getUserWithId = getUserWithId;
  * @return {Promise<{}>} A promise to the user.
  */
 const addUser =  function(user) {
-  const userId = Object.keys(users).length + 1;
-  user.id = userId;
-  users[userId] = user;
-  return Promise.resolve(user);
+  const queryString = `INSERT INTO users (name, email, password)
+  VALUES ($1, $2, $3)
+  RETURNING *;`;
+
+  const name = user.name;
+  const email = user.email;
+  const password = user.password;
+  
+  const values = [name, email, password];
+
+  return pool
+  .query(queryString, values)
+  .then((result) => {
+    return result.rows;
+  })
+  .catch((err) => {
+    return null;
+  });
+
+  // const userId = Object.keys(users).length + 1;
+  // user.id = userId;
+  // users[userId] = user;
+  // return Promise.resolve(user);
 }
 exports.addUser = addUser;
 
