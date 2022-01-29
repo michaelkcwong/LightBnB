@@ -20,12 +20,12 @@ const pool = new Pool({
 const getUserWithEmail = function(email) {
 const queryString = `SELECT * FROM users
 WHERE email = $1;`;
+
 const values = [email];
 return pool
 .query(queryString, values)
 .then((result) => {
-  console.log(result.rows[0]);
-  return result.rows;
+  return result.rows[0];
 })
 .catch((err) => {
   return null;
@@ -51,7 +51,21 @@ exports.getUserWithEmail = getUserWithEmail;
  * @return {Promise<{}>} A promise to the user.
  */
 const getUserWithId = function(id) {
-  return Promise.resolve(users[id]);
+  const queryString = `SELECT * FROM users
+  WHERE id = $1;`;
+  
+  const values = [id];
+  return pool
+  .query(queryString, values)
+  .then((result) => {
+    return result.rows[0];
+  })
+  .catch((err) => {
+    return null;
+  });
+
+//   return Promise.resolve(users[id]);
+
 }
 exports.getUserWithId = getUserWithId;
 
