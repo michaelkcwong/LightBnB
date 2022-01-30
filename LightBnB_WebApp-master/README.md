@@ -1,5 +1,10 @@
 # LightBnB
 
+## Project Description
+
+Lighthouse BnB is a clone of AirBnB. It will allow homeowners to rent out their homes to people on vacation, creating an alternative to hotels and bed and breakfasts. Users can view property information, book reservations, view their reservations, and write reviews.
+
+
 ## Project Structure
 
 ```
@@ -41,3 +46,13 @@
   * `apiRoutes.js` and `userRoutes.js` are responsible for any HTTP requests to `/users/something` or `/api/something`. 
   * `json` is a directory that contains a bunch of dummy data in `.json` files.
   * `database.js` is responsible for all queries to the database. It doesn't currently connect to any database, all it does is return data from `.json` files.
+
+## Dependencies
+
+* dependencies": {
+    * bcrypt": "^3.0.6",
+    * body-parser": "^1.19.0",
+    * cookie-session": "^1.3.3",
+    * express": "^4.17.1",
+    * nodemon": "^1.19.1",
+    * pg": "^8.7.1"
