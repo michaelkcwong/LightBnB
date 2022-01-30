@@ -32,17 +32,6 @@ return pool
   return null;
 });
 
-
-  // let user;
-  // for (const userId in users) {
-  //   user = users[userId];
-  //   if (user.email.toLowerCase() === email.toLowerCase()) {
-  //     break;
-  //   } else {
-  //     user = null;
-  //   }
-  // }
-  // return Promise.resolve(user);
 }
 exports.getUserWithEmail = getUserWithEmail;
 
@@ -96,10 +85,6 @@ const addUser =  function(user) {
     return null;
   });
 
-  // const userId = Object.keys(users).length + 1;
-  // user.id = userId;
-  // users[userId] = user;
-  // return Promise.resolve(user);
 }
 exports.addUser = addUser;
 
@@ -110,6 +95,7 @@ exports.addUser = addUser;
  * @param {string} guest_id The id of the user.
  * @return {Promise<[{}]>} A promise to the reservations.
  */
+
 const getAllReservations = function(guest_id, limit = 10) {
 
   const queryString = `SELECT reservations.id, properties.*, reservations.start_date, properties.cost_per_night, AVG(property_reviews.rating)
@@ -197,14 +183,6 @@ return pool
   console.log(err.message);
 });
 };
-
-
-  // const limitedProperties = {};
-  // for (let i = 1; i <= limit; i++) {
-  //   limitedProperties[i] = properties[i];
-  // }
-  // return Promise.resolve(limitedProperties);
-//}
 exports.getAllProperties = getAllProperties;
 
 /**
@@ -230,10 +208,5 @@ const addProperty = function(property) {
       console.log(err.message);
     });
 
-
-  // const propertyId = Object.keys(properties).length + 1;
-  // property.id = propertyId;
-  // properties[propertyId] = property;
-  // return Promise.resolve(property);
 }
 exports.addProperty = addProperty;
