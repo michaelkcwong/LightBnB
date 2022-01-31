@@ -4,6 +4,9 @@
 
 Lighthouse BnB is a clone of AirBnB. It will allow homeowners to rent out their homes to people on vacation, creating an alternative to hotels and bed and breakfasts. Users can view property information, book reservations, view their reservations, and write reviews.
 
+## Project Image
+
+![ScreenShot](https://raw.github.com/{michaelkcwong}/{LightBnB}/{https://github.com/michaelkcwong/LightBnB/blob/master/LightBnB_WebApp-master/images/lightbnb_home.png})
 
 ## Project Structure
 
@@ -49,10 +52,10 @@ Lighthouse BnB is a clone of AirBnB. It will allow homeowners to rent out their 
 
 ## Dependencies
 
-* dependencies": {
-    * bcrypt": ^3.0.6,
-    * body-parser": ^1.19.0,
-    * cookie-session": ^1.3.3,
-    * express": ^4.17.1,
-    * nodemon": ^1.19.1,
-    * pg": ^8.7.1
+* dependencies: {
+    * bcrypt: ^3.0.6,
+    * body-parser: ^1.19.0,
+    * cookie-session: ^1.3.3,
+    * express: ^4.17.1,
+    * nodemon: ^1.19.1,
+    * pg: ^8.7.1
